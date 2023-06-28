@@ -6,19 +6,19 @@ export default {
             links: [
                 {
                     label: 'Home',
-                    icon: 'fa-solid fa-magnifying-glass',
+                    icon: '',
                     href: '#',
                     active: false
                 },
                 {
                     label: 'Serie tv',
-                    icon: 'fa-solid fa-magnifying-glass',
+                    icon: '',
                     href: '#',
                     active: false
                 },
                 {
                     label: 'Film',
-                    icon: 'fa-solid fa-magnifying-glass',
+                    icon: '',
                     href: '#',
                     active: false
                 },
@@ -30,19 +30,19 @@ export default {
                 },
                 {
                     label: 'Aggiunti di recente',
-                    icon: 'fa-solid fa-magnifying-glass',
+                    icon: 'fa-solid fa-download',
                     href: '#',
                     active: false
                 },
                 {
                     label: 'La mia lista',
-                    icon: 'fa-solid fa-magnifying-glass',
+                    icon: 'fa-solid fa-user',
                     href: '#',
                     active: false
                 },
                 {
                     label: '',
-                    icon: 'fa-solid fa-house',
+                    icon: 'fa-solid fa-right-to-bracket',
                     href: '#',
                     active: false
                 },
@@ -66,9 +66,9 @@ export default {
     <div class="">
         <div class="content d-flex justify-content-between">
             <div class="d-flex">
-                <h1>Boolflix</h1>
+                <h1 class="style-title">Boolflix</h1>
                 <ul class="navbar">
-                    <li v-for="(link, index) in links" :key="index">
+                    <li v-for="(link, index) in links" :key="index" class="nav-text">
                         <a class="font-size" :href="link.href" :class="{ 'active': link.active }"
                             @click="setActiveLink(index)">
                             {{ link.label.toUpperCase() }}
@@ -97,6 +97,11 @@ li {
     padding-left: 20px;
     color: white;
     padding-top: 10px;
+
+}
+
+.nav-text {
+    padding-top: 0px;
 }
 
 a {
@@ -110,5 +115,10 @@ a {
 
 .text-white {
     color: white;
+}
+
+.style-title {
+    color: red;
+    font-weight: 900;
 }
 </style>
